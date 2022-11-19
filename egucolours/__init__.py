@@ -23,7 +23,7 @@ class Colour(str):
         return super(Colour, cls).__new__(cls, hex_value.lower())
 
     def __init__(self, name, hex_value):
-        self._name = name 
+        self._name = name
         super().__init__()
 
     @property
@@ -45,3 +45,18 @@ class Colour(str):
     def __str__(self):
         a = self.RGB
         return '{0:14s} RGB {1:3d} | {2:3d} | {3:3d}      ({4})'.format('EGU ' + self.name + ':', a[0], a[1], a[2], super().__str__())
+
+
+class ColourMapping(dict):
+    """
+    Class representation of a colour dictionary. The key/value pairs cannot be altered after instantiation.
+    """
+    def __init__(self, colour_dict):
+        super().__init__(colour_dict)
+        
+    def __setitem__(self, key, value):
+        raise ValueError('ColourMapping items cannot be altered after instantiation.')
+        
+
+    def __delitem__(self, key):
+        raise ValueError('ColourMapping items cannot be altered after instantiation.')
