@@ -2,9 +2,9 @@
 
 class Colour(str):
     """
-    Class representation of a colour. The colour is instantiated by its hex value, 
+    Class representation of a colour. The colour is instantiated by its hex value,
     i.e. Colour(name, hex_value). This class is designed to be compatible with the
-    matplotlib colour mechanics, but holds additional metadata in the form of the 
+    matplotlib colour mechanics, but holds additional metadata in the form of the
     colour name.
 
     Properties
@@ -32,15 +32,15 @@ class Colour(str):
 
     @property
     def hex(self):
-        return self 
+        return self
 
     @property
     def RGB(self):
-        return tuple(int(self[i:i+2], 16) for i in (1, 3, 5))
+        return tuple(int(self[i:i + 2], 16) for i in (1, 3, 5))
 
     @property
     def rgb(self):
-        return tuple(int(self[i:i+2], 16) / 255 for i in (1, 3, 5))
+        return tuple(int(self[i:i + 2], 16) / 255 for i in (1, 3, 5))
 
     def __str__(self):
         a = self.RGB
@@ -53,10 +53,9 @@ class ColourMapping(dict):
     """
     def __init__(self, colour_dict):
         super().__init__(colour_dict)
-        
+
     def __setitem__(self, key, value):
         raise ValueError('ColourMapping items cannot be altered after instantiation.')
-        
 
     def __delitem__(self, key):
         raise ValueError('ColourMapping items cannot be altered after instantiation.')
