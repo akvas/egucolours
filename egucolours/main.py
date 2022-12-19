@@ -1,4 +1,4 @@
-from ._color_data import MAIN_PALETTE 
+from ._color_data import MAIN_PALETTE
 from . import Colour, ColourMapping
 
 
