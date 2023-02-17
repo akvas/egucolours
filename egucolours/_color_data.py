@@ -1,6 +1,6 @@
 # Main and Neutral palettes taken from https://www.egu.eu/visual-identity/
 MAIN_PALETTE = {'blue': '#0072BC', 'yellow': '#FFDE00'}
-NEUTRAL_PALETTE = {'white': '#ffffff', 'gray': '#A8A9AD'}
+NEUTRAL_PALETTE = {'white': '#ffffff', 'grey': '#A8A9AD'}
 
 # Division colors taken from https://www.egu.eu/structure/divisions/
 DIVISION_COLOURS = {'AS': '#4242d4', 'BG': '#1a4d04', 'CL': '#5f3172', 'CR': '#007db8', 'EMRP': '#87251f', 'ERE': '#2a6736',
