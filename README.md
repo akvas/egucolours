@@ -58,3 +58,6 @@ The `egucolours` package contains a top-level dict-like collection with all pale
 'GMPV': '#dc3728', 'HS': '#258838', 'NH': '#753f2f', 'NP': '#0f1e3d', 'OS': '#274b96',
 'PS': '#932d75', 'SM': '#a03150', 'SSP': '#916b2a', 'SSS': '#6b4a08', 'ST': '#75387a',
 'TS': '#be5409'}
+```
+
+![EGU color mosaic](https://github.com/akvas/egucolours/blob/docs/docs/source/images/full.png)
