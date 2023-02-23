@@ -3,6 +3,8 @@
 European Geosciences Union (EGU) colour palettes and division colours derived from
 EGU's [visual identity](https://www.egu.eu/visual-identity/) and
 [structure overview](https://www.egu.eu/structure/divisions/).
+Usage examples and the package reference can be found in the [documentation](https://akvas.github.io/egucolours/index.html).
+
 The package can be installed via `pip`:
 
 ```bash
