@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>European Geosciences Union (EGU) Colours &#8212; egucolours 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">egucolours 0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">European Geosciences Union (EGU) Colours</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-egucolours"></span><section id="european-geosciences-union-egu-colours">
+<h1>European Geosciences Union (EGU) Colours<a class="headerlink" href="#european-geosciences-union-egu-colours" title="Permalink to this heading">¶</a></h1>
+<p>European Geosciences Union (EGU) colour palettes and division colours derived from
+EGU’s <a class="reference external" href="https://www.egu.eu/visual-identity/">visual identity</a> and
+<a class="reference external" href="https://www.egu.eu/structure/divisions/">structure overview</a>.
+The package can be installed via <cite>pip</cite>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install egucolours
+</pre></div>
+</div>
+<p>Separate sub-modules for the main palette, neutral palette, and division colors are available.
+Each module contains a dict-like collection <cite>colours</cite> which holds all colours of the respective
+palette. The colours are compatible with the <cite>matplotlib</cite> colour mechanics and can be used in the
+same fashion as hex-strings or RGB triples.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">egucolours</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">egucolours</span><span class="o">.</span><span class="n">division</span><span class="o">.</span><span class="n">AS</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Colours can be accessed by their name. For the <cite>main</cite> palette, this looks like as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">egucolours</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">egucolours</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">colours</span><span class="p">)</span>
+<span class="go">{&#39;blue&#39;: &#39;#0072bc&#39;, &#39;yellow&#39;: &#39;#ffde00&#39;}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">egucolours</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span>
+<span class="go">EGU blue:      RGB   0 | 114 | 188      (#0072bc)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">egucolours</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">colours</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">])</span>
+<span class="go">EGU yellow:    RGB 255 | 222 |   0      (#ffde00)</span>
+</pre></div>
+</div>
+<p>Division colours can be accessed in a similar fashion:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">egucolours</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">egucolours</span><span class="o">.</span><span class="n">division</span><span class="o">.</span><span class="n">AS</span><span class="p">)</span>
+<span class="go">EGU AS:        RGB  66 |  66 | 212      (#4242d4)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">egucolours</span><span class="o">.</span><span class="n">division</span><span class="o">.</span><span class="n">colours</span><span class="p">[</span><span class="s1">&#39;AS&#39;</span><span class="p">])</span>
+<span class="go">EGU AS:        RGB  66 |  66 | 212      (#4242d4)</span>
+</pre></div>
+</div>
+<p>The <cite>egucolours</cite> package contains a top-level dict-like collection with all palettes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">egucolours</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">egucolours</span><span class="o">.</span><span class="n">colours</span><span class="p">)</span>
+<span class="go">{&#39;blue&#39;: &#39;#0072bc&#39;, &#39;yellow&#39;: &#39;#ffde00&#39;, &#39;white&#39;: &#39;#ffffff&#39;, &#39;grey&#39;: &#39;#a8a9ad&#39;, &#39;AS&#39;: &#39;#4242d4&#39;,</span>
+<span class="go">&#39;BG&#39;: &#39;#1a4d04&#39;, &#39;CL&#39;: &#39;#5f3172&#39;, &#39;CR&#39;: &#39;#007db8&#39;, &#39;EMRP&#39;: &#39;#87251f&#39;, &#39;ERE&#39;: &#39;#2a6736&#39;,</span>
+<span class="go">&#39;ESSI&#39;: &#39;#6a4a96&#39;, &#39;G&#39;: &#39;#a450ce&#39;, &#39;GD&#39;: &#39;#aa292b&#39;, &#39;GI&#39;: &#39;#757575&#39;, &#39;GM&#39;: &#39;#497e74&#39;,</span>
+<span class="go">&#39;GMPV&#39;: &#39;#dc3728&#39;, &#39;HS&#39;: &#39;#258838&#39;, &#39;NH&#39;: &#39;#753f2f&#39;, &#39;NP&#39;: &#39;#0f1e3d&#39;, &#39;OS&#39;: &#39;#274b96&#39;,</span>
+<span class="go">&#39;PS&#39;: &#39;#932d75&#39;, &#39;SM&#39;: &#39;#a03150&#39;, &#39;SSP&#39;: &#39;#916b2a&#39;, &#39;SSS&#39;: &#39;#6b4a08&#39;, &#39;ST&#39;: &#39;#75387a&#39;,</span>
+<span class="go">&#39;TS&#39;: &#39;#be5409&#39;}</span>
+</pre></div>
+</div>
+<img alt="_images/full.png" src="_images/full.png" />
+</section>
+<section id="module-egucolours.main">
+<span id="modules"></span><h1>Modules<a class="headerlink" href="#module-egucolours.main" title="Permalink to this heading">¶</a></h1>
+<section id="egucolours-main">
+<h2>egucolours.main<a class="headerlink" href="#egucolours-main" title="Permalink to this heading">¶</a></h2>
+<p>EGU main palette (blue/yellow).</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.main.blue">
+<span class="sig-prename descclassname"><span class="pre">egucolours.main.</span></span><span class="sig-name descname"><span class="pre">blue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#0072bc'</span></em><a class="headerlink" href="#egucolours.main.blue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.main.colours">
+<span class="sig-prename descclassname"><span class="pre">egucolours.main.</span></span><span class="sig-name descname"><span class="pre">colours</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'blue':</span> <span class="pre">'#0072bc',</span> <span class="pre">'yellow':</span> <span class="pre">'#ffde00'}</span></em><a class="headerlink" href="#egucolours.main.colours" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.main.yellow">
+<span class="sig-prename descclassname"><span class="pre">egucolours.main.</span></span><span class="sig-name descname"><span class="pre">yellow</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#ffde00'</span></em><a class="headerlink" href="#egucolours.main.yellow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<span class="target" id="module-egucolours.neutral"></span><section id="egucolours-neutral">
+<h2>egucolours.neutral<a class="headerlink" href="#egucolours-neutral" title="Permalink to this heading">¶</a></h2>
+<p>EGU neutral palette (white/grey).</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.neutral.colours">
+<span class="sig-prename descclassname"><span class="pre">egucolours.neutral.</span></span><span class="sig-name descname"><span class="pre">colours</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'grey':</span> <span class="pre">'#a8a9ad',</span> <span class="pre">'white':</span> <span class="pre">'#ffffff'}</span></em><a class="headerlink" href="#egucolours.neutral.colours" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.neutral.grey">
+<span class="sig-prename descclassname"><span class="pre">egucolours.neutral.</span></span><span class="sig-name descname"><span class="pre">grey</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#a8a9ad'</span></em><a class="headerlink" href="#egucolours.neutral.grey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.neutral.white">
+<span class="sig-prename descclassname"><span class="pre">egucolours.neutral.</span></span><span class="sig-name descname"><span class="pre">white</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#ffffff'</span></em><a class="headerlink" href="#egucolours.neutral.white" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<span class="target" id="module-egucolours.division"></span><section id="egucolours-division">
+<h2>egucolours.division<a class="headerlink" href="#egucolours-division" title="Permalink to this heading">¶</a></h2>
+<p>EGU division colors</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.AS">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">AS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#4242d4'</span></em><a class="headerlink" href="#egucolours.division.AS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.BG">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">BG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#1a4d04'</span></em><a class="headerlink" href="#egucolours.division.BG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.CL">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">CL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#5f3172'</span></em><a class="headerlink" href="#egucolours.division.CL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.CR">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">CR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#007db8'</span></em><a class="headerlink" href="#egucolours.division.CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.EMRP">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">EMRP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#87251f'</span></em><a class="headerlink" href="#egucolours.division.EMRP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.ERE">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">ERE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#2a6736'</span></em><a class="headerlink" href="#egucolours.division.ERE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.ESSI">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">ESSI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#6a4a96'</span></em><a class="headerlink" href="#egucolours.division.ESSI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.G">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">G</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#a450ce'</span></em><a class="headerlink" href="#egucolours.division.G" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.GD">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">GD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#aa292b'</span></em><a class="headerlink" href="#egucolours.division.GD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.GI">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">GI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#757575'</span></em><a class="headerlink" href="#egucolours.division.GI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.GM">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">GM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#497e74'</span></em><a class="headerlink" href="#egucolours.division.GM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.GMPV">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">GMPV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#dc3728'</span></em><a class="headerlink" href="#egucolours.division.GMPV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.HS">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">HS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#258838'</span></em><a class="headerlink" href="#egucolours.division.HS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.NH">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">NH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#753f2f'</span></em><a class="headerlink" href="#egucolours.division.NH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.NP">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">NP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#0f1e3d'</span></em><a class="headerlink" href="#egucolours.division.NP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.OS">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">OS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#274b96'</span></em><a class="headerlink" href="#egucolours.division.OS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.PS">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">PS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#932d75'</span></em><a class="headerlink" href="#egucolours.division.PS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.SM">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">SM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#a03150'</span></em><a class="headerlink" href="#egucolours.division.SM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.SSP">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">SSP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#916b2a'</span></em><a class="headerlink" href="#egucolours.division.SSP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.SSS">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">SSS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#6b4a08'</span></em><a class="headerlink" href="#egucolours.division.SSS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.ST">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">ST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#75387a'</span></em><a class="headerlink" href="#egucolours.division.ST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.TS">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">TS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#be5409'</span></em><a class="headerlink" href="#egucolours.division.TS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="egucolours.division.colours">
+<span class="sig-prename descclassname"><span class="pre">egucolours.division.</span></span><span class="sig-name descname"><span class="pre">colours</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'AS':</span> <span class="pre">'#4242d4',</span> <span class="pre">'BG':</span> <span class="pre">'#1a4d04',</span> <span class="pre">'CL':</span> <span class="pre">'#5f3172',</span> <span class="pre">'CR':</span> <span class="pre">'#007db8',</span> <span class="pre">'EMRP':</span> <span class="pre">'#87251f',</span> <span class="pre">'ERE':</span> <span class="pre">'#2a6736',</span> <span class="pre">'ESSI':</span> <span class="pre">'#6a4a96',</span> <span class="pre">'G':</span> <span class="pre">'#a450ce',</span> <span class="pre">'GD':</span> <span class="pre">'#aa292b',</span> <span class="pre">'GI':</span> <span class="pre">'#757575',</span> <span class="pre">'GM':</span> <span class="pre">'#497e74',</span> <span class="pre">'GMPV':</span> <span class="pre">'#dc3728',</span> <span class="pre">'HS':</span> <span class="pre">'#258838',</span> <span class="pre">'NH':</span> <span class="pre">'#753f2f',</span> <span class="pre">'NP':</span> <span class="pre">'#0f1e3d',</span> <span class="pre">'OS':</span> <span class="pre">'#274b96',</span> <span class="pre">'PS':</span> <span class="pre">'#932d75',</span> <span class="pre">'SM':</span> <span class="pre">'#a03150',</span> <span class="pre">'SSP':</span> <span class="pre">'#916b2a',</span> <span class="pre">'SSS':</span> <span class="pre">'#6b4a08',</span> <span class="pre">'ST':</span> <span class="pre">'#75387a',</span> <span class="pre">'TS':</span> <span class="pre">'#be5409'}</span></em><a class="headerlink" href="#egucolours.division.colours" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+<section id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="egucolours.Colour">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">egucolours.</span></span><span class="sig-name descname"><span class="pre">Colour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hex_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/egucolours/_core.html#Colour"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#egucolours.Colour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class representation of a colour.</p>
+<p>The colour is instantiated by its hex value, i.e. Colour(name, hex_value). This class is designed to be compatible with the
+matplotlib colour mechanics, but holds additional metadata in the form of the
+colour name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Colour name</p></li>
+<li><p><strong>hex_value</strong> (<em>str</em>) – Hexadecimal representation of the colour (e.g., “#ffffff”)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="egucolours.Colour.RGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RGB</span></span><a class="headerlink" href="#egucolours.Colour.RGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGB representation of colour</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>RGB triple (e.g. (255, 255, 255))</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple of int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="egucolours.Colour.hex">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hex</span></span><a class="headerlink" href="#egucolours.Colour.hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>HEX representation of colour</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Colour hex string (e.g. #ffffff)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="egucolours.Colour.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#egucolours.Colour.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Colour name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Colour name</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="egucolours.Colour.rgb">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rgb</span></span><a class="headerlink" href="#egucolours.Colour.rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>rgb representation of colour</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rgb triple (e.g. (1.0, 1.0, 1.0))</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="egucolours.ColourMapping">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">egucolours.</span></span><span class="sig-name descname"><span class="pre">ColourMapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colour_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/egucolours/_core.html#ColourMapping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#egucolours.ColourMapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class representation of a colour dictionary. The key/value pairs cannot be altered after instantiation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>colour_dict</strong> (<em>dict</em>) – dictionary of name: hex_value pairs</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">European Geosciences Union (EGU) Colours</a></li>
+<li><a class="reference internal" href="#module-egucolours.main">Modules</a><ul>
+<li><a class="reference internal" href="#egucolours-main">egucolours.main</a></li>
+<li><a class="reference internal" href="#egucolours-neutral">egucolours.neutral</a></li>
+<li><a class="reference internal" href="#egucolours-division">egucolours.division</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">egucolours 0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">European Geosciences Union (EGU) Colours</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022-2023, Andreas Kvas.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>
